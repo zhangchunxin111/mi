@@ -243,7 +243,15 @@
 	position: absolute;
 	top: 0;
 	left: 0;
+	opacity: 0;
 
+}
+.img-box .active{
+	z-index: 1;
+	opacity: 1;
+}
+.xiaoyuandian .active{
+	background: #fff;
 }
 .img-box li a{
 	width: 100%;
@@ -264,6 +272,7 @@
 	top: 0px;
 	left:0px;
 	line-height: 100%;
+	z-index: 9999;
 	/* margin: 0 auto; */
 	/* margin-top: 20px; */
  }
@@ -311,11 +320,12 @@
 	
 } */
 .xiaoyuandian{
-	width: 90px;
+	width:120px;
 	height: 10px;
 	position: absolute;
     right: 25px;
 	bottom: 25px;
+	z-index: 999;
 }
 .xiaoyuandian li{
 	border-radius: 50%;
@@ -324,14 +334,17 @@
 	background: #929190;
 	border: 2px solid #7c7c81;
 	margin-right: 10px;
-	float: right;
+	float: left;
+}
+.xioayuandian .active{
+	background: #fff;
 }
 .banner-left{
 	width: 32px;
 	height:60px;
 	font-size: 42px;
 	color: #d5d4d4;
-
+	z-index: 999;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -340,20 +353,22 @@
 	left: 234px;
 	text-align: center;
 	line-height: 60px;
-	display: block;
+	cursor: pointer;
+	
+	/*display: block;*/
 }
 .banner-left:hover{
-	background: rgba(0, 0, 0,0.5)
+	background: rgba(0, 0, 0,0.6)
 }
 .banner-right:hover{
-	background: rgba(0, 0, 0,0.5)
+	background: rgba(0, 0, 0,0.6)
 }
 .banner-right{
 	width: 32px;
 	height: 60px;
 	font-size: 42px;
 	color: #d5d4d4;
-	
+	z-index: 999;
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -362,7 +377,8 @@
 	right: 0px;
 	text-align: center;
 	line-height: 60px;
-	display: block;
+	cursor: pointer;
+	/*display: block;*/
 }
 .caise{
 	width: 1226px;
@@ -510,6 +526,7 @@
 	height: 399px;
 	background: red;
 	margin: 0 auto;
+	overflow: hidden;
 }
 .danpin-shang{
 	width: 100%;
@@ -518,9 +535,11 @@
 
 }
 .danpin-bottom{
-	width: 100%;
+	width: 3000px;
 	height: 340px;
 	background: #ffffff;
+	overflow: hidden;
+	transition: all 0.6s;
 }
 .danpin-list{
 	width: 234px;
@@ -529,10 +548,10 @@
 	margin-right: 14px;
 	float: left;
 }
-.danpin-bottom .danpin-list:last-child{
-	margin-right: 0;
-	border-top: 1px solid #00c0a5;
-}
+/*.danpin-bottom .danpin-list:last-child{
+	
+
+}*/
 .danpin-bottom .danpin-list:first-child{
 	border-top: 1px solid #ffac13;
 }
@@ -544,8 +563,31 @@
 }
 .danpin-bottom .danpin-list:nth-child(4){
 	border-top: 1px solid #e53935;
-
+	
 }
+.danpin-bottom .danpin-list:nth-child(5){
+	border-top: 1px solid #00c0a5;
+	margin-right: 0;
+}	
+.danpin-bottom .danpin-list:nth-child(6){
+	border-top: 1px solid #ffac13;
+}
+.danpin-bottom .danpin-list:nth-child(7){
+	border-top: 1px solid #83c44e;
+}
+.danpin-bottom .danpin-list:nth-child(8){
+	border-top: 1px solid #2196f3;
+	
+}
+.danpin-bottom .danpin-list:nth-child(9){
+	border-top: 1px solid #e53935;
+	
+}
+.danpin-bottom .danpin-list:nth-child(10){
+	border-top: 1px solid #00c0a5;
+	margin-right: 0;
+}
+
 .danpin-tupian{
 	width: 160px;
 	height: 160px;
@@ -589,7 +631,7 @@
 	margin-top: 24px;
 
 }
-.zuohezi{
+.dahezi .zuohezi{
 	width: 33px;
 	height: 21px;
 	border: 1px solid #e0e0e0;
@@ -599,10 +641,11 @@
 	line-height: 22px;
 	float: left;
 	text-align: center;
+	cursor: pointer;
 
 
 }
-.youhezi{
+.dahezi .youhezi{
 	width: 32px;
 	height: 21px;
 	border: 1px solid #e0e0e0;
@@ -611,8 +654,15 @@
 	line-height: 22px;
 	float: right;
 	text-align: center;
-
+	cursor: pointer;
 }
+.dahezi .active{
+	color: orange;
+}
+.dahezi .active:hover{
+	color: orange;
+}	
+
 .dabox{
 	width: 1226px;
 	height: 694px;
