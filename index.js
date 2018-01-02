@@ -1,4 +1,4 @@
-
+{
 	let imgs=document.querySelectorAll('.img-box li')
 	let pagers=document.querySelectorAll('.xiaoyuandian li')
 	let banner=document.querySelector(".banner")
@@ -66,17 +66,10 @@
 	})
 
 	})
-
-	
-
-	
-	
-	
-
-
+}
 
 //小米明星单品
-
+{
 	let z=document.querySelector(".zuohezi");
 
 	let y=document.querySelector(".youhezi");
@@ -111,5 +104,106 @@
 	danpin.onmouseout=function(){
 		t=setInterval(starfn,2000);
 	}
+}	
+
+	
+	
+	
+
+//内容
+
+//
+////
+{   
+	let list=document.querySelectorAll(".neironghezi")
+			list.forEach(function(ele){
+				ggb(ele)
+			})
+	function ggb(lyq){
+	let inner=lyq.querySelector(".neironghezi .list")
+	let prev=lyq.querySelector(".prev")
+	let next=lyq.querySelector(".prev2")
+	let item=lyq.querySelectorAll(".inner")
+	let pages=lyq.querySelectorAll(".nrxy li")
+	let items=item.length
+	let n = 0;
+	console.log(inner)
+	next.onclick = function() {
+		n++
+		if(n >= items) {
+			n = items - 1
+				return
+			}
+			inner.style.marginLeft = -n * 300 + "px"
+			for(let i = 0; i < pages.length; i++) {
+				pages[i].classList.remove("active")
+			}
+				pages[n].classList.add("active")
+			}
+			prev.onclick = function() {
+				n--
+				if(n < 0) {
+				    n = 0
+					return
+				}
+		    inner.style.marginLeft = -n * 300 + "px"
+			for(let i = 0; i < pages.length; i++) {
+				pages[i].classList.remove("active")
+			}
+			pages[n].classList.add("active")
+			}
+			pages.forEach(function(ele, index) {
+				let m = index
+				ele.onclick = function() {
+					for(let i = 0; i < pages.length; i++) {
+						pages[i].classList.remove("active")
+					}
+					ele.classList.add("active")
+					inner.style.marginLeft = -m * 300 + "px"
+					n = index
+				}
+			})	
+		}
+}
+//智能硬件
+{
+	let ywz=document.querySelectorAll(".youwenzi")
+	let tu=document.querySelectorAll(".dabox-right .content")
+	console.log(ywz)
+	console.log(tu)
+	ywz.forEach(function(ele,index){
+		ele.onclick=function(){
+			 for(let i=0;i<ywz.length;i++){
+                ywz[i].classList.remove("active");
+                tu[i].classList.remove("active");
+            }
+			 this.classList.add("active");
+            tu[index].classList.add("active");
+		}
+	})
+}
+//ele.onclick=function () {
+//          for(let i=0;i<btn.length;i++){
+//              btn[i].classList.remove("active");
+//              contents[i].classList.remove("active");
+//          }
+//          this.classList.add("active");
+//          contents[index].classList.add("active");
 
 
+//			let c=document.querySelector(".box")
+//			let a=document.querySelectorAll(".btn");
+//			let b=document.querySelectorAll(".content");
+//			a.forEach(function(ele,index){
+//				ele.onclick=function(){
+//					b.forEach(function(ele){
+//						ele.style.display="none"
+//					})
+//				b[index].style.display="block"
+//					
+//				}
+//
+//			})
+//			 console.log(location);
+//			 console.log(location.hosthome);
+	
