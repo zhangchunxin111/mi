@@ -10,7 +10,7 @@
 				pagers[i].classList.remove('active');
 				imgs[i].classList.remove('active')
 			}
-			this.classList.add('active');
+			pagers[index].classList.add('active');
 			imgs[index].classList.add('active');
 			n=index
 		}
@@ -47,7 +47,7 @@
 	}
 	let flag=true;
 	bannerright.onclick=function(){
-//	alert(1)
+
 		if(flag){
 		flag=false;
 		fn();
@@ -89,12 +89,13 @@
 	}
 	let m=0;
 	function starfn(){
+		m++;
 		if (m%2==0){
 		danpinxia.style.transform="translateX(-1240px)"
-			m++;
+			
 		}else{
 		danpinxia.style.transform="translateX(0)"
-			m++;
+
 		}
 	}
 	let t=setInterval(starfn,2000);
@@ -111,9 +112,6 @@
 	
 
 //内容
-
-//
-////
 {   
 	let list=document.querySelectorAll(".neironghezi")
 			list.forEach(function(ele){
@@ -169,10 +167,10 @@
 {
 	let ywz=document.querySelectorAll(".youwenzi")
 	let tu=document.querySelectorAll(".dabox-right .content")
-	console.log(ywz)
-	console.log(tu)
+//	console.log(ywz)
+//	console.log(tu)
 	ywz.forEach(function(ele,index){
-		ele.onclick=function(){
+		ele.onmouseover=function(){
 			 for(let i=0;i<ywz.length;i++){
                 ywz[i].classList.remove("active");
                 tu[i].classList.remove("active");
@@ -182,28 +180,29 @@
 		}
 	})
 }
-//ele.onclick=function () {
-//          for(let i=0;i<btn.length;i++){
-//              btn[i].classList.remove("active");
-//              contents[i].classList.remove("active");
-//          }
-//          this.classList.add("active");
-//          contents[index].classList.add("active");
 
+//侧banner
+{
+	let cenav=document.querySelectorAll(".aside .asideli")
 
-//			let c=document.querySelector(".box")
-//			let a=document.querySelectorAll(".btn");
-//			let b=document.querySelectorAll(".content");
-//			a.forEach(function(ele,index){
-//				ele.onclick=function(){
-//					b.forEach(function(ele){
-//						ele.style.display="none"
-//					})
-//				b[index].style.display="block"
-//					
-//				}
-//
-//			})
-//			 console.log(location);
-//			 console.log(location.hosthome);
+	let cenavbox=document.querySelectorAll(".aside .asideli .children")
+	let banner=document.querySelector(".banner")
+	console.log(cenavbox)
+	cenav.forEach(function(ele,index){
+		ele.onmouseenter=function(){
+			for(let i=0;i<cenavbox.length;i++){
+//				ele[i].classList.remove("active");
+				cenavbox[i].classList.remove("active")
+			}
+//			ele[index].classList.add("active");
+			cenavbox[index].classList.add("active")
+		}
+		cenavbox[index].onmouseleave=ele.onmouseleave=function(){
+        	for(let i=0;i<cenavbox.length;i++){
+            	 cenavbox[i].classList.remove("active")
+       		}
+        }
+	})
+	
+}
 	

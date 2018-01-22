@@ -142,7 +142,7 @@
 .daohangwenzi:hover{
 	color: #ff7e00;
 }
-/* daohangwenzi:hover */
+
 .daohang-right{
 	width: 294px;
 	height: 48px;
@@ -150,66 +150,82 @@
 	margin-top: 25px;
 	float: right;
 	/* margin: 0 auto; */
-	border: 1px solid #eeeeee;
+	/*border: 1px solid #eeeeee;*/
 	display: block;
-	/* line-height: 48px */
+	position: relative;
 }
-/* .daohang-rightbox1{
-	background: white;
-	float: left;
-	margin-left: 94px;
-	display: block;
-	line-height: 48px
-} */
-.mix{
-	float: left;
-	margin-left: 94px;
-	display: block;
-	width: 53px;
-	height: 18px;
-	background: #eeeeee;
-	font-size: 12px;
-	margin-top: 15px;
-	text-align: center;
-	color: black;
+.sousuo{
+	position: absolute;
+    top: 0;
+    right: 51px;
+    z-index: 1;
+    width: 223px;
+    height: 48px;
+    padding: 0 10px;
+    border: 1px solid #e0e0e0;
+    font-size: 14px;
+    line-height: 48px;
+    outline: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
 }
-.mix:hover{
-	background: #ff7e00
+.search-words{
+	position: absolute;
+    top: 14px;
+    right: 62px;
+    z-index: 2;
+    text-align: right;
 }
-.rengong:hover{
-    background: #ff7e00
+.search-words a{
+	display: inline-block;
+    margin-left: 5px;
+    padding: 0 5px;
+    font-size: 12px;
+    background: #eee;
+    color: #757575;
+    -webkit-transition: all .2s;
+    transition: all .2s;
 }
-.rengong{
-	float: left;
-	margin-left: 4px;
-	display: block;
-	width: 82px;
-	height: 18px;
-	background: #eeeeee;
-	font-size: 12px;
-	margin-top: 15px;
-	text-align: center;
-	color: black;
-
+.search-btn{
+	position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    width: 52px;
+    height: 48px;
+    border: 1px solid #e0e0e0;
+    font-size: 24px;
+    line-height: 24px;
+    background: #fff;
+    color: #616161;
+    outline: 0;
+    -webkit-transition: all .2s;
+    transition: all .2s;
+	background-image: url('../img/fdjer.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 22px 22px
+    
 }
-.daohang-rightbox2{
+/*.daohang-rightbox2{
 	width: 50px;
 	height: 48px;
 	float: right;
 	border-left: 1px solid #eeeeee;
 	display: block;
-	background-image: url('../img/fdjer.jpg');
+
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 22px 22px
 	
-}
-.daohang-rightbox2:hover{
+}*/
+.search-btn:hover{
 	background: red;
 	background-image: url('../img/fdj.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: 22px 22px;
+	cursor: pointer;
 	
 }
 /* .daohang-rightbox1{
@@ -276,23 +292,16 @@
 	/* margin: 0 auto; */
 	/* margin-top: 20px; */
  }
- .aside li{
+ .asideli{
  	width: 100%;
 	height:42px;
 	margin-top: 5px;
 
-
-
-	/* position: absolute;
-	top: 0px;
-	left:0px;
-	/* line-height: 100%; */ 
 }
-.aside li:hover{
+.aside .asideli:hover{
 	background: #ff6700;
 }
-
-.aside li:first-child{
+.asideli:first-child{
  	margin-top: 20px;
  }
  .aside-left{
@@ -312,13 +321,57 @@
  	margin-right: 20px;
  	
 }
-/* .xiaoyuandian{
-	width: 10px;
-	height: 10px;
-	background: #929190;
-	float: right;
-	
-} */
+.children{
+	display: none;
+	width: 795px;
+    position: absolute;
+    left: 234px;
+    top: 0;
+    z-index: 24;
+    height: 458px;
+    border: 1px solid #e0e0e0;
+    border-left: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+}
+.children.active{
+	display: block;
+}
+.children-list{
+	width: 265px;
+	height: 458px;
+
+	float: left;
+	margin: 0;
+	list-style-type: none;
+	padding: 2px 0;
+}
+.children-list li{
+	width: 265px;
+	height: 76px;
+
+}
+.children .children-list li:hover span{
+	color:#FF6700 ;
+}
+.children-list li .links{
+	display: block;
+    padding: 18px 20px;
+    line-height: 40px;
+    color: #333;
+    -webkit-transition: color .2s;
+    transition: color .2s;
+}
+.children-list li .link apsn{
+	line-height: 40px;
+}
+.thum{
+	width: 40px;
+	height: 40px;
+	margin-right: 12px;
+	vertical-align: middle;
+}
 .xiaoyuandian{
 	width:120px;
 	height: 10px;
@@ -744,15 +797,17 @@
 }
 .smallhezi{
 	width: 234px;
-	height: 100px;
+	height: 80px;
 	background: #ff7e00;
 	position: absolute;
-	bottom: -100px;
+	bottom: -80px;
 	left: 0;
 	text-align: center;
 }
 .heziyi:hover .smallhezi{
-	transform: translateY(-100px);
+	/*transform: translateY(-84px);*/
+	position: absolute;
+	bottom: 0;
 
 }
 .smallhezi p{
